@@ -1,0 +1,13 @@
+{
+  "name": "@angsanley/httplog",
+  "imports": {
+    "hono": "jsr:@hono/hono@^4.9.4"
+  },
+  "tasks": {
+    "start": "deno run --allow-net main.ts"
+  },
+  "compilerOptions": {
+    "jsx": "precompile",
+    "jsxImportSource": "hono/jsx"
+  }
+}

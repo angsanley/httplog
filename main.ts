@@ -10,9 +10,9 @@ export const customLogger = (message: string, ...rest: unknown[]) => {
 
 app.use(logger(customLogger))
 
-app.notFound((c) => {
+app.notFound(async (c) => {
   const headers = c.req.header()
-  const body = c.req.raw.body
+  const body = await c.req.text()
 
   customLogger("Headers:", headers || '<empty>')
   customLogger("Body:", body || '<empty>')
